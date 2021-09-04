@@ -22,9 +22,9 @@ getNumber()
 
   read -p "$1:"
 
-  while (( $REPLY <$1 || $REPLY> $100)); do
+  while (( $REPLY <$2 || $REPLY> $3)); do
 
-    printError "Input must be between $1 and $100" 
+    printError "Input must be between $2 and $3" 
 
     read -p "$:"
 
@@ -33,8 +33,12 @@ getNumber()
 
 }
 
+echo "Let the guessing game begin, my number is more than 0 but less less than 100"
 
-getNumber "please type a number between 1 and 100 if you guess the correct number you will be informed" 1 100
+getNumber "To low try again" 1 50
 
+getNumber "To high try again" 51 100
 
-echo "Correct!"
+getNumber "Correct, you got it" 42
+
+echo "Well done"
