@@ -1,9 +1,9 @@
 #!/bin/bash 
 
-echo "Google Server IPs:" 
+echo "Google server IPs:"
 
-awk '{ 
-      
-    print $1 
-      
+awk '{
+    
+    print $1
+    
 }' input.txt 
